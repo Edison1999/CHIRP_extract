@@ -15,7 +15,7 @@ def move_files_to_curr_dir(root_dir, sub_dir):
     src_files = os.listdir(upper_dir)
     for file_name in src_files:
         full_file_name = os.path.join(upper_dir, file_name)
-        if os.path.isfile(full_file_name) and full_file_name.endswith('.fits'):
+        if os.path.isfile(full_file_name):
             shutil.copy(full_file_name, root_dir)
     shutil.rmtree(upper_dir)
 
