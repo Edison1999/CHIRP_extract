@@ -52,6 +52,7 @@ def valid_year(year):
 
 def valid_path(path):
     try:
+        print(path)
         if not os.path.exists(path):
             raise argparse.ArgumentTypeError("Invalid path")
         return path
@@ -64,7 +65,6 @@ def main():
     parser.add_argument("-a", "--all", action="store_true", help="Extract all files.")
     parser.add_argument("-y", "--year", type=valid_year ,help="Extract files by year. Need to be an int.")
     args = parser.parse_args()
-
     if args.all:
         list_dirs(args.path)
     elif args.year:
@@ -72,6 +72,7 @@ def main():
         list_dirs(args.path, str(args.year))
     else:
         parser.print_help()
+    list_dirs(r"C:\Users\aleja\Desktop\Desktop\Job\Gulliver\Test")
 
 if __name__ == "__main__":
     main()
