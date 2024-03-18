@@ -52,7 +52,6 @@ def valid_year(year):
 
 def valid_path(path):
     try:
-        print(path)
         if not os.path.exists(path):
             raise argparse.ArgumentTypeError("Invalid path")
         return path
@@ -72,7 +71,6 @@ def main():
         list_dirs(args.path, str(args.year))
     else:
         parser.print_help()
-    list_dirs(r"C:\Users\aleja\Desktop\Desktop\Job\Gulliver\Test")
 
 if __name__ == "__main__":
     main()
